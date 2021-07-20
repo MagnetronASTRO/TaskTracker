@@ -28,7 +28,7 @@ const Navbar = () => {
   };
   return (
     <div className="navbar">
-      <div className="navContente">
+      <div className="navContent">
         <h1>Todo List</h1>
         <p>{tasks.length} task left...</p>
       </div>
@@ -50,37 +50,39 @@ const Navbar = () => {
         </Button>
       </div>
       <AddContainer className="addform" isOpen={isOpen}>
-        <form onSubmit={handleSubmit}>
-          <h2>Add your task to list</h2>
-          <input
-            type="text"
-            placeholder="Task name"
-            value={title}
-            onChange={(e) => setTask(e.target.value)}
-            required
-          />
-          <input
-            style={{ marginTop: "10px" }}
-            type="text"
-            placeholder="When/till when"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-          />
-          <Button
-            type="submit"
-            variant="contained"
-            onClick={handleClose}
-            style={{
-              marginTop: "30px",
-              backgroundColor: "#30fedf",
-              fontWeight: "600",
-              fontSize: "18px",
-            }}
-          >
-            ADD
-          </Button>
-        </form>
+        <div className="formwrapper">
+          <form onSubmit={handleSubmit}>
+            <h2>Add your task to list</h2>
+            <input
+              type="text"
+              placeholder="Task name"
+              value={title}
+              onChange={(e) => setTask(e.target.value)}
+              required
+            />
+            <input
+              style={{ marginTop: "10px" }}
+              type="text"
+              placeholder="When/till when"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              onClick={handleClose}
+              style={{
+                marginTop: "30px",
+                backgroundColor: "#30fedf",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              ADD
+            </Button>
+          </form>
+        </div>
       </AddContainer>
     </div>
   );
